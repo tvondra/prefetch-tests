@@ -1,0 +1,7 @@
+1 : create index idx on t(a ASC) with (deduplicate_items=false)
+2 : create index idx on t(a DESC) with (deduplicate_items=false)
+3 : create index idx on t(a ASC) with (deduplicate_items=false)
+4 : create index idx on t(a DESC) with (deduplicate_items=false)
+5 : create index idx on t(a ASC) with (deduplicate_items=false)
+6 : create index idx on t(a DESC) with (deduplicate_items=false)
+7 : create index idx on t(a ASC) with (deduplicate_items=false)
