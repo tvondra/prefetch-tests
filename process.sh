@@ -64,6 +64,7 @@ sqlite3 results.db > branches.tmp <<EOF
 SELECT DISTINCT branch FROM results ORDER BY branch
 EOF
 
+# relative comparison of all the branches
 while IFS= read -r b1; do
 
 	b1=$(echo $b1 | tr -d '\r')
@@ -100,6 +101,22 @@ EOF
 .mode table
 SELECT *, round("$b2" - "$b1",2) AS diff, round(100 * (("$b2" - "$b1") / "$b1"), 2) AS pct_diff FROM regressions ORDER BY ("$b2" - "$b1") DESC
 EOF
+
+sqlite3 results.db > $MACHINE/$b1-$b2.data <<EOF
+.mode tab
+SELECT "$b1", "$b2" FROM regressions
+EOF
+
+		m=$(sqlite3 results.db <<EOF
+.mode tab
+SELECT MAX((CASE WHEN "$b1" > "$b2" THEN "$b1" ELSE "$b2" END)) FROM regressions
+EOF
+)
+
+		sed "s/B1/$b1/g" plot.template | sed "s/B2/$b2/g" | sed "s|FILE|$MACHINE/$b1-$b2|" | sed "s/MAX/$m/g" > $b1-$b2.plot
+
+		gnuplot $b1-$b2.plot
+		mv $b1-$b2.plot $MACHINE
 
 	done < branches.tmp
 
