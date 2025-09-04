@@ -104,7 +104,7 @@ EOF
 
 sqlite3 results.db > $MACHINE/$b1-$b2.data <<EOF
 .mode tab
-SELECT "$b1", "$b2" FROM regressions
+SELECT "$b1", "$b2", did FROM regressions
 EOF
 
 		m=$(sqlite3 results.db <<EOF

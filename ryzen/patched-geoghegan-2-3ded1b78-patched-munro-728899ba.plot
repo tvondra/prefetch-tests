@@ -10,5 +10,8 @@ set view equal xy
 set xrange[0:9656.08]
 set yrange[0:9656.08]
 
-plot 'ryzen/patched-geoghegan-2-3ded1b78-patched-munro-728899ba.data' using 1:2 w points, \
+unset colorbox
+set nokey
+
+plot 'ryzen/patched-geoghegan-2-3ded1b78-patched-munro-728899ba.data' using 1:2:3 w points pt 7 ps 0.75 palette, \
 	[0:9656.08] x with lines
