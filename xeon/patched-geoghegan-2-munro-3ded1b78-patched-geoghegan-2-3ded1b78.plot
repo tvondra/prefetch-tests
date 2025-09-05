@@ -7,11 +7,11 @@ set xlabel "patched-geoghegan-2-munro-3ded1b78"
 set ylabel "patched-geoghegan-2-3ded1b78"
 set view equal xy
 
-set xrange[0:14024.61]
-set yrange[0:14024.61]
+set xrange[0:22690.36]
+set yrange[0:22690.36]
 
 unset colorbox
 set nokey
 
 plot 'xeon/patched-geoghegan-2-munro-3ded1b78-patched-geoghegan-2-3ded1b78.data' using 1:2:3 w points pt 7 ps 0.75 palette, \
-	[0:14024.61] x with lines
+	[0:22690.36] x with lines

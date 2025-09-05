@@ -7,11 +7,11 @@ set xlabel "patched-geoghegan-43ff7415"
 set ylabel "patched-geoghegan-munro-43ff7415"
 set view equal xy
 
-set xrange[0:20248.17]
-set yrange[0:20248.17]
+set xrange[0:22546.95]
+set yrange[0:22546.95]
 
 unset colorbox
 set nokey
 
 plot 'ryzen/patched-geoghegan-43ff7415-patched-geoghegan-munro-43ff7415.data' using 1:2:3 w points pt 7 ps 0.75 palette, \
-	[0:20248.17] x with lines
+	[0:22546.95] x with lines

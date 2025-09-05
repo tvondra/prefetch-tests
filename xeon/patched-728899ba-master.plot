@@ -7,11 +7,11 @@ set xlabel "patched-728899ba"
 set ylabel "master"
 set view equal xy
 
-set xrange[0:15339.83]
-set yrange[0:15339.83]
+set xrange[0:42925.84]
+set yrange[0:42925.84]
 
 unset colorbox
 set nokey
 
 plot 'xeon/patched-728899ba-master.data' using 1:2:3 w points pt 7 ps 0.75 palette, \
-	[0:15339.83] x with lines
+	[0:42925.84] x with lines

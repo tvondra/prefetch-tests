@@ -7,11 +7,11 @@ set xlabel "patched-munro-728899ba"
 set ylabel "master"
 set view equal xy
 
-set xrange[0:20206.39]
-set yrange[0:20206.39]
+set xrange[0:29824.87]
+set yrange[0:29824.87]
 
 unset colorbox
 set nokey
 
 plot 'ryzen/patched-munro-728899ba-master.data' using 1:2:3 w points pt 7 ps 0.75 palette, \
-	[0:20206.39] x with lines
+	[0:29824.87] x with lines
