@@ -10,6 +10,14 @@ set view equal xy
 set xrange[0:MAX]
 set yrange[0:MAX]
 
+
+set palette color
+set view map
+#set palette rgbformulae 7,5,15
+set palette model HSV rgbformulae 3,2,2
+
+# set logscale xy
+
 unset colorbox
 set nokey
 
